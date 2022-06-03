@@ -16,7 +16,7 @@
 
 ## Process:
 
-1. Modify `my_current_project/settings.py`:  
+1. Modify `fabrial_proj/settings.py`:  
     ```
     import os
 

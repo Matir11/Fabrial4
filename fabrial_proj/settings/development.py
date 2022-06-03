@@ -1,16 +1,14 @@
-from my_current_project.settings.common import *
-
-import os
+from fabrial_proj.settings.common import *
 
 
-DEBUG = False
+DEBUG = True
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# Create a specific `SECRET_KEY` for production and use it in production only.
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# Create your own `SECRET_KEY` here for use in Development. Create a specific one for production only and use it in production only.
+SECRET_KEY = "3)hq&x!awji5*(iw3ovzji^92as-nw57(m@7h#x^-c2wzu%qam"
 
 # To create a new `SECRET_KEY`:
 """

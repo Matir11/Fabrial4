@@ -27,7 +27,7 @@
         
     Mode                 LastWriteTime         Length Name
     ----                 -------------         ------ ----
-    d----          2022-05-15    15:50                my_current_project
+    d----          2022-05-15    15:50                fabrial_proj
     d----          2022-05-21    07:58                notes
     d----          2022-05-15    11:27                staticfiles
     d----          2022-05-21    07:58                templates

@@ -5,21 +5,21 @@
 
 ## Process:
 
-1. Create directory `my_current_project/settings`:  
-`mkdir my_current_project/settings`
+1. Create directory `fabrial_proj/settings`:  
+`mkdir fabrial_proj/settings`
 
-1. Move and rename `my_current_project/settings.py` to `common.py`:  
-`Move-Item -Path .\my_current_project\settings.py -Destination .\my_current_project\settings\common.py`
+1. Move and rename `fabrial_proj/settings.py` to `common.py`:  
+`Move-Item -Path .\fabrial_proj\settings.py -Destination .\fabrial_proj\settings\common.py`
 
-1. Remove `SECRET_KEY` line from `my_current_project/settings/common.py`.
+1. Remove `SECRET_KEY` line from `fabrial_proj/settings/common.py`.
 
-1. Modify `BASE_DIR` in `my_current_project/settings/common.py` to define correct `BASE_DIR` since we nested `settings.py` one level down:  
+1. Modify `BASE_DIR` in `fabrial_proj/settings/common.py` to define correct `BASE_DIR` since we nested `settings.py` one level down:  
 `BASE_DIR = Path(__file__).resolve().parent.parent.parent`
 
-1. Create `development.py` and `production.py` in `my_current_project/settings`:  
+1. Create `development.py` and `production.py` in `fabrial_proj/settings`:  
     * `settings/development.py`
         ```
-        from my_current_project.settings.common import *
+        from fabrial_proj.settings.common import *
 
         DEBUG = True
 
@@ -35,7 +35,7 @@
         ```
     * `settings/production.py`
         ```
-        from my_current_project.settings.common import *
+        from fabrial_proj.settings.common import *
 
         DEBUG = False
 
@@ -50,22 +50,22 @@
         """
         ```
 
-1. Change `os.environ.setdefault()` in `my_current_project/wsgi.py`:  
-`os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my_current_project.settings.development')`
+1. Change `os.environ.setdefault()` in `fabrial_proj/wsgi.py`:  
+`os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fabrial_proj.settings.development')`
 
 1. Change `def main()` in `manage.py`:  
     ```
     def main():
         ...
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my_current_project.settings.development')
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fabrial_proj.settings.development')
         ...
     ```
 
 1. Push changes to Heroku:  
 `git push heroku main`
 
-1. Set `DJANGO_SETTINGS_MODULE` to `'my_current_project.settings.production'` on production server. This will set up server to run the production settings since we will set a non-empty value for `DJANGO_SETTINGS_MODULE`:  
-`heroku config:set DJANGO_SETTINGS_MODULE='my_current_project.settings.production'`
+1. Set `DJANGO_SETTINGS_MODULE` to `'fabrial_proj.settings.production'` on production server. This will set up server to run the production settings since we will set a non-empty value for `DJANGO_SETTINGS_MODULE`:  
+`heroku config:set DJANGO_SETTINGS_MODULE='fabrial_proj.settings.production'`
 
 1. Test deployed application:  
     * https://django-custom-user-starter.herokuapp.com/

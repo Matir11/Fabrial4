@@ -25,7 +25,7 @@
 ### Set up Django:
 
 1. Create project skeleton:  
-    `django-admin startproject my_current_project .`
+    `django-admin startproject fabrial_proj .`
 
 1. Create `users` app:  
     `python manage.py startapp users`
@@ -39,7 +39,7 @@
 1. Stop the server:  
     * Ctrl + c
 
-1. Modify `my_current_project\settings.py`:
+1. Modify `fabrial_proj\settings.py`:
     ```
     INSTALLED_APPS = [
         ...
@@ -124,7 +124,7 @@
 1. Create `superuser`:  
     `python manage.py createsuperuser`
 
-1. Modify `my_current_project\settings.py`:  
+1. Modify `fabrial_proj\settings.py`:  
     * Direct Django templates engine to appropriate directory (in 'TEMPLATES' section).
         ```
         TEMPLATES = [
@@ -143,15 +143,15 @@
 
 1. Create directories and files:  
     * Directories:  
-        `my_current_project\templates`  
-        `my_current_project\templates\registration`  
+        `fabrial_proj\templates`  
+        `fabrial_proj\templates\registration`  
     * Files:  
-        `my_current_project\templates\base.html`  
-        `my_current_project\templates\home.html`  
-        `my_current_project\templates\registration\login.html`  
-        `my_current_project\templates\registration\signup.html`  
+        `fabrial_proj\templates\base.html`  
+        `fabrial_proj\templates\home.html`  
+        `fabrial_proj\templates\registration\login.html`  
+        `fabrial_proj\templates\registration\signup.html`  
 
-1. Add contents to `my_current_project\templates\base.html`:
+1. Add contents to `fabrial_proj\templates\base.html`:
     ```
     <!DOCTYPE html>
     <html>
@@ -168,7 +168,7 @@
     </html>
     ```
 
-1. Add contents to `my_current_project\templates\home.html`:
+1. Add contents to `fabrial_proj\templates\home.html`:
     ```
     {% extends "base.html" %}
 
@@ -186,7 +186,7 @@
     {% endblock %}
     ```
 
-1. Add contents to `my_current_project\templates\registration\login.html`:
+1. Add contents to `fabrial_proj\templates\registration\login.html`:
     ```
     {% extends "base.html" %}
 
@@ -202,7 +202,7 @@
     {% endblock %}
     ```
 
-1. Add contents to `my_current_project\templates\registration\signup.html`:
+1. Add contents to `fabrial_proj\templates\registration\signup.html`:
     ```
     {% extends "base.html" %}
 
@@ -218,7 +218,7 @@
     {% endblock %}
     ```
 
-1. Modify `my_current_project\urls.py` to match something similar:
+1. Modify `fabrial_proj\urls.py` to match something similar:
     ```
     from django.contrib import admin
     from django.urls import path, include
@@ -263,7 +263,7 @@
     * `http://localhost:8010/admin/`
 
 ## Set up docutils:  
-1. Modify `my_current_project\settings.py`:
+1. Modify `fabrial_proj\settings.py`:
     ```
     INSTALLED_APPS = [
         ...
@@ -272,7 +272,7 @@
     ]
     ```
 
-1. Modify `my_current_project\urls.py` (insert before 'admin/' entry):
+1. Modify `fabrial_proj\urls.py` (insert before 'admin/' entry):
     ```
     urlpatterns = [
         ...
