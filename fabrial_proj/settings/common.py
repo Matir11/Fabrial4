@@ -34,10 +34,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    #users
     'django.contrib.admindocs',
 
     'users.apps.UsersConfig',
+
+    #todo
+    "fabrial_app",
 ]
 
 MIDDLEWARE = [
