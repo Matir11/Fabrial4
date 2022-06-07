@@ -36,13 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #users
     'django.contrib.admindocs',
-
     'users.apps.UsersConfig',
 
     #todo
     'rest_framework',
     'corsheaders',
-    'task'
+    'task',
+    
 
 
 ]
